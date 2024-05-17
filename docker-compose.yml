@@ -1,14 +1,17 @@
 version: '3.8'
 services:
   python3:
+    ports:
+      - '6080:6080'
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
       - DISPLAY=unix$DISPLAY
     restart: always
     build: .
-    container_name: 'python3'
+    container_name: 'python3_gui'
     working_dir: '/root/'
     volumes:
+      - ./work:/root/Desktop
       - ./src:/root/src
       - type: bind
         source: /tmp/.X11-unix
