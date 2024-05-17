@@ -1,15 +1,19 @@
-version: '3'
+version: '3.8'
 services:
   python3:
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
+      - DISPLAY=unix$DISPLAY
     restart: always
     build: .
     container_name: 'python3'
     working_dir: '/root/'
-    tty: true
     volumes:
       - ./src:/root/src
+      - type: bind
+        source: /tmp/.X11-unix
+        target: /tmp/.X11-unix
+    tty: true
     deploy:
       resources:
         reservations:

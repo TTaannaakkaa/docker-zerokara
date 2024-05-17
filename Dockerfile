@@ -1,5 +1,6 @@
 # FROM python:3
 FROM nvidia/cuda:11.8.0-runtime-ubuntu20.04
+RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 USER root
 
 RUN apt-get update
@@ -13,6 +14,7 @@ ENV TERM xterm
 
 RUN apt-get install -y vim less
 RUN apt-get install -y python3-pip \
+    python3-tk \
     neovim
 
 RUN pip install --upgrade pip
