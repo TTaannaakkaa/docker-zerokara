@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  python3:
+  zerokara:
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
       - DISPLAY=unix$DISPLAY
