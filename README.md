@@ -1,5 +1,4 @@
 docker-zerokara
 
-requirment
+requirment  \
 nvidia-tool-kit
-cuda-driver
